@@ -5,16 +5,17 @@ const app = express;
 const port = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser');
-
+// const { async } = require('jshint/src/prod-params');
 app.use(bodyParser.json());
+//load env FILE
+require('dotenv').config()
 
 const {
     MongoClient,
     ObjectId
   } = require('mongodb');
-  const config = require('./config.json')
   //new mongo client
-  const client = new MongoClient(config.baseUrl);
+  const client = new MongoClient(process.env.FINAL_URL);
 
 app.get('/', (req, res) =>{
     res.send("Het werkt")
