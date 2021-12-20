@@ -1,0 +1,8 @@
+{
+    "baseUrl": "mongodb+srv://admin:admin@cluster0.wlnhd.mongodb.net/course-project?retryWrites=true&w=majority",
+    "username": "admin",
+    "pw": "admin",
+    "db":"course-project"
+
+}
+
