@@ -5,8 +5,10 @@ const app = express;
 const port = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser');
+const cors = require('cors');
 // const { async } = require('jshint/src/prod-params');
 app.use(bodyParser.json());
+
 //load env FILE
 require('dotenv').config()
 
@@ -22,7 +24,7 @@ app.get('/', (req, res) =>{
 })
 
 
-app.get("/museum", async (req, res)=> {
+app.get("/museum",cors(), async (req, res)=> {
     try {
 
         //connect met de database
